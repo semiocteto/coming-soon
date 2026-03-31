@@ -1,216 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Macedo's Pro Painting — Coming Soon</title>
-  <style>
-    :root {
-      --primary: #151f28;
-      --accent: #f0c23f;
-      --white: #fff;
+{
+  "interior": [
+    {
+      "src": "images/interior/living-room-1.jpg",
+      "caption": "Living room repaint — Nashua, NH",
+      "alt": "Freshly painted living room in Nashua, NH"
+    },
+    {
+      "src": "images/interior/bedroom-1.jpg",
+      "caption": "Bedroom accent wall — Lowell, MA",
+      "alt": "Accent wall in a bedroom in Lowell, MA"
     }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: var(--primary);
-      color: var(--white);
-      text-align: center;
-      padding: 30px;
-      padding-bottom: 60px;
-      box-sizing: border-box;
+  ],
+  "exterior": [
+    {
+      "src": "images/exterior/house-1.jpg",
+      "caption": "Full exterior repaint — Manchester, NH",
+      "alt": "Exterior of a house painted in Manchester, NH"
     }
-
-    img.logo {
-      width: 320px;
-      height: auto;
-      margin-bottom: 20px;
+  ],
+  "cabinets": [
+    {
+      "src": "images/cabinets/kitchen-1.jpg",
+      "caption": "Kitchen cabinet refinishing — Salem, NH",
+      "alt": "White painted kitchen cabinets in Salem, NH"
     }
-
-    h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--accent);
-      margin-bottom: 10px;
+  ],
+  "deck": [
+    {
+      "src": "images/deck/1.jpeg",
+      "caption": "Deck staining — Dracut, MA",
+      "alt": "Wooden deck freshly stained in Dracut, MA"
+    },
+    { "src": "images/deck/2.jpeg" },
+    { "src": "images/deck/3.jpeg" },
+    { "src": "images/deck/4.jpeg" },
+    { "src": "images/deck/5.jpeg" },
+    { "src": "images/deck/6.jpeg" },
+    { "src": "images/deck/7.jpeg" },
+    { "src": "images/deck/8.jpeg" },
+    { "src": "images/deck/9.jpeg" }
+  ],
+  "power": [
+    {
+      "src": "images/power-washing/driveway-1.jpg",
+      "caption": "Power washing — driveway",
+      "alt": "Driveway after power washing"
     }
-
-    p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.8);
-      max-width: 500px;
-      line-height: 1.6;
-      margin-bottom: 20px;
+  ],
+  "carpentry": [
+    {
+      "src": "images/carpentry/trim-1.jpg",
+      "caption": "Light carpentry & trim repair",
+      "alt": "Trim repair before painting"
     }
-
-    .contact a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .contact a:hover {
-      text-decoration: underline;
-    }
-
-    .social {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: center;
-    }
-
-    /* CORRIGIDO: seletor estava quebrado no seu código */
-    .social a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--accent);
-      color: var(--primary);
-      padding: 12px 22px;
-      border-radius: 4px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background 0.3s;
-      width: 220px;
-    }
-
-    .social a:hover {
-      background: #d8ac34;
-    }
-
-    /* Botão SMS — estilo diferenciado */
-    .social a.sms-btn {
-      background: transparent;
-      border: 2px solid var(--accent);
-      color: var(--accent);
-    }
-
-    .social a.sms-btn:hover {
-      background: rgba(240, 194, 63, 0.15);
-    }
-
-    /* Seletor de idioma */
-    .lang-switcher {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      gap: 8px;
-    }
-
-    .lang-switcher button {
-      background: transparent;
-      border: 2px solid var(--accent);
-      color: var(--accent);
-      padding: 6px 10px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 0.85rem;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .lang-switcher img {
-      width: 18px;
-      height: 12px;
-      border-radius: 2px;
-    }
-
-    .lang-switcher button:hover,
-    .lang-switcher button.active {
-      background: var(--accent);
-      color: var(--primary);
-    }
-
-    footer {
-      margin-top: 30px;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.6);
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Seletor de idioma -->
-  <div class="lang-switcher">
-    <button onclick="setLang('en')" id="btn-en" class="active">
-      <img src="https://flagcdn.com/us.svg" alt="English" /> EN
-    </button>
-    <button onclick="setLang('pt')" id="btn-pt">
-      <img src="https://flagcdn.com/br.svg" alt="Português" /> PT
-    </button>
-  </div>
-
-  <img src="logomcd.png" alt="Macedo's Pro Painting" class="logo">
-
-  <h1 id="title">We're Painting Something Great!</h1>
-
-  <p id="description">
-    Macedo's Pro Painting is getting a fresh online look.<br>
-    Check back soon for our new website — or contact us below for a free quote today.
-  </p>
-
-  <div class="contact">
-    <p>
-      📞 <a href="tel:+16039430060">(603) 943-0060</a><br>
-      ✉️ <a href="mailto:macedospropainting@gmail.com">macedospropainting@gmail.com</a>
-    </p>
-
-    <div class="social">
-
-      <!-- Botão WhatsApp -->
-      <a href="https://wa.me/16039430060?text=Hi%20Pedro!%20I'd%20like%20to%20request%20a%20free%20painting%20quote.">
-        <img src="whatsapp.svg" alt="WhatsApp" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;" />
-        <span id="whatsapp-text">Chat on WhatsApp</span>
-      </a>
-
-      <!-- Botão SMS / iMessage -->
-      <a class="sms-btn" href="sms:+16039430060&body=Hi%20Pedro!%20I'd%20like%20to%20request%20a%20free%20painting%20quote.">
-        💬 <span id="sms-text">Send a Text Message</span>
-      </a>
-
-    </div>
-  </div>
-
-  <footer>© 2026 Macedo's Pro Painting. All rights reserved.</footer>
-
-  <script>
-    const translations = {
-      en: {
-        title: "We're Painting Something Great!",
-        description: "Macedo's Pro Painting is getting a fresh online look.<br>Check back soon for our new website — or contact us below for a free quote today.",
-        whatsapp: "Chat on WhatsApp",
-        sms: "Send a Text Message"
-      },
-      pt: {
-        title: "Estamos Pintando Algo Incrível!",
-        description: "A Macedo's Pro Painting está ganhando um novo visual online.<br>Volte em breve para conferir nosso novo site — ou entre em contato para um orçamento gratuito hoje mesmo.",
-        whatsapp: "Falar no WhatsApp",
-        sms: "Enviar uma SMS"
-      }
-    };
-
-    function setLang(lang) {
-      const t = translations[lang];
-      document.getElementById('title').innerHTML = t.title;
-      document.getElementById('description').innerHTML = t.description;
-      document.getElementById('whatsapp-text').innerHTML = t.whatsapp;
-      document.getElementById('sms-text').innerHTML = t.sms; /* CORRIGIDO: estava faltando */
-
-      document.getElementById('btn-en').classList.remove('active');
-      document.getElementById('btn-pt').classList.remove('active');
-      document.getElementById('btn-' + lang).classList.add('active');
-    }
-  </script>
-
-</body>
-</html>
+  ]
+}
